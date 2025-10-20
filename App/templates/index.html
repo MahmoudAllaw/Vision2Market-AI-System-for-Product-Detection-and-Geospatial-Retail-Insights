@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Product Detection & Price Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>🛒 AI Product Detection & Price Finder</h1>
+
+    <form id="uploadForm">
+        <div class="input-group">
+            <label>Select Image:</label>
+            <input type="file" name="image" accept="image/*" required>
+        </div>
+
+        <div class="input-group">
+            <label>Enter Area:</label>
+            <input type="text" name="area" placeholder="e.g. Dubai, London" required>
+        </div>
+
+        <button type="submit">Detect & Search</button>
+    </form>
+
+    <div id="resultsContainer">
+        <div id="listSection">
+            <h2 id="productTitle">Detected Product:</h2>
+            <div id="productList" class="list"></div>
+        </div>
+
+        <div id="mapSection">
+            <div id="map"></div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
